@@ -1,0 +1,43 @@
+name: Submit a mod
+description: Add your mod to the Mod Manager list.
+title: "Add mod: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Your mod needs a public GitHub repo with a release that has a `.dll` (or a `.zip` with one inside) attached.
+        It's added automatically once the checks pass. Mod Manager always installs your latest release.
+  - type: input
+    id: repo
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/You/YourMod
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Mod name
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One or two sentences (200 characters max).
+    validations:
+      required: true
+  - type: input
+    id: side
+    attributes:
+      label: Side
+      description: "Who installs it: client (players), server (server owners) or both."
+      placeholder: both
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Optional, comma separated (up to 5).

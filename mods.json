@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "id": "cheeto35/cheetoscrystalleather",
+    "name": "Crystal Leather",
+    "repo": "Cheeto35/CheetosCrystalLeather",
+    "author": "Cheeto35",
+    "description": "Adds green and purple crystal wyrms and crystal leather. The server and every player need it.",
+    "side": "both",
+    "tags": [
+      "crafting"
+    ],
+    "added": "2026-11-23",
+    "latest": {
+      "tag": "v1.0.0",
+      "published": "2026-11-23",
+      "assets": [
+        {
+          "name": "CrystalLeather.dll",
+          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.0.0/CrystalLeather.dll",
+          "size": 59392
+        }
+      ]
+    }
+  },
+  {
+    "id": "cheeto35/cheetosorespawnfix",
+    "name": "Cheetos Ore Spawn Fix",
+    "repo": "Cheeto35/CheetosOreSpawnFix",
+    "author": "Cheeto35",
+    "description": "Fixes ore ratios and buried ore, and respawns mines and crystals. Server only.",
+    "side": "server",
+    "tags": [
+      "mining"
+    ],
+    "added": "2026-11-23",
+    "latest": {
+      "tag": "v1.1.5",
+      "published": "2026-11-18",
+      "assets": [
+        {
+          "name": "CheetosOreSpawnFix.dll",
+          "url": "https://github.com/Cheeto35/CheetosOreSpawnFix/releases/download/v1.1.5/CheetosOreSpawnFix.dll",
+          "size": 98304
+        }
+      ]
+    }
+  }
+]

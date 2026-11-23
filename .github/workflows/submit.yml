@@ -1,7 +1,7 @@
 name: Submit mod
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened, edited]
 permissions:
   contents: write
   issues: write

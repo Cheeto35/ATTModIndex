@@ -31,22 +31,26 @@
     "description": "Adds green and purple crystal wyrms and crystal leather. The server and every player need it.",
     "side": "both",
     "tags": [
-      "crafting"
+      "gameplay",
+      "combat",
+      "crafting",
+      "items",
+      "creatures"
     ],
     "added": "2026-11-23",
     "latest": {
-      "tag": "v1.1.0",
+      "tag": "v1.1.1",
       "published": "2026-11-24",
       "assets": [
         {
           "name": "CrystalLeather.dll",
-          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.1.0/CrystalLeather.dll",
-          "size": 61952
+          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.1.1/CrystalLeather.dll",
+          "size": 62464
         },
         {
           "name": "CrystalLeather.Quest.dll",
-          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.1.0/CrystalLeather.Quest.dll",
-          "size": 41984
+          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.1.1/CrystalLeather.Quest.dll",
+          "size": 42496
         }
       ]
     },

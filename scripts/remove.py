@@ -17,7 +17,8 @@ def main():
     who = (issue.get("user") or {}).get("login")
     repo = os.environ["GITHUB_REPOSITORY"]
     mods = gh.load_mods()
-    entry, reason = il.validate_removal(il.parse_issue_form(issue.get("body") or ""), mods, who)
+    entry, reason = il.validate_removal(il.parse_issue_form(issue.get("body") or ""), mods, who,
+                                       admin=repo.split("/")[0])
     if reason:
         gh.call("POST", f"/repos/{repo}/issues/{number}/comments",
                 {"body": f"Couldn't remove this mod: {reason}"})

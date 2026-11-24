@@ -10,7 +10,7 @@ The community list of A Township Tale mods used by **Cheetos Mod Manager**, a Ta
 
 A bot checks the submission and adds it within a minute or two. If something's wrong, the bot comments on the issue with the reason. Edit the issue and it checks again.
 
-To change your mod's name, description, side or tags, submit it again. The person who added a mod and the owner of its repo can both do this.
+To change your mod's name, description, side or tags, use **⋯ → Edit listing** in Mod Manager, or submit it again. The person who added a mod and the owner of its repo can both do this. The owner of this list can edit or remove any listing.
 
 Mod Manager always installs your **latest release**. To ship an update, publish a new release. The list picks it up within an hour.
 

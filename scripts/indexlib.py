@@ -17,6 +17,8 @@ BAD_SIDE = "Pick client, server or both for Side."
 NO_NAME = "Mod name is required."
 NOT_LISTED = "That mod isn't in the list."
 NOT_YOURS = "Only {who} can remove {name}: the person who added it, or the owner of its GitHub repo."
+NOT_YOURS_EDIT = ("This mod is already listed. Only {who} can change {name}'s listing: the person who added it, "
+                  "or the owner of its GitHub repo.")
 
 _NAME = r"[A-Za-z0-9_.-]+"
 _REPO_RE = re.compile(r"^(?:(?:https?://)?(?:www\.)?github\.com/)?(" + _NAME + r")/(" + _NAME + r")(?:/.*)?$")
@@ -125,9 +127,10 @@ def refresh_entry(entry, release, repo_exists):
     return entry
 
 
-def owners(entry):
-    """GitHub logins (lower case) allowed to change or remove a listing: who added it, and the repo's owner."""
-    found = {str(entry.get("repo", "")).split("/")[0].lower()}
+def owners(entry, admin=None):
+    """GitHub logins (lower case) allowed to change or remove a listing: who added it, the repo's owner,
+    and the owner of the list itself (admin)."""
+    found = {str(entry.get("repo", "")).split("/")[0].lower(), str(admin or "").lower()}
     if entry.get("submitted_by"):
         found.add(str(entry["submitted_by"]).lower())
     found.discard("")
@@ -153,7 +156,7 @@ def update_listing(old, new):
     return merged
 
 
-def validate_removal(fields, mods, who):
+def validate_removal(fields, mods, who, admin=None):
     """Returns (entry, None) when `who` may remove the mod named in the form, else (None, reason)."""
     repo = parse_repo(fields.get("mod", ""))
     if not repo:
@@ -161,7 +164,7 @@ def validate_removal(fields, mods, who):
     entry = next((m for m in mods if m.get("id") == repo.lower()), None)
     if entry is None:
         return None, NOT_LISTED
-    if (who or "").lower() not in owners(entry):
+    if (who or "").lower() not in owners(entry, admin):
         return None, NOT_YOURS.format(name=entry.get("name", repo), who=_owner_names(entry))
     return entry, None
 

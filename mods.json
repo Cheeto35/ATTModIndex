@@ -64,6 +64,8 @@
     "description": "Fixes ore ratios and buried ore, and respawns mines and crystals. Server only.",
     "side": "server",
     "tags": [
+      "gameplay",
+      "quality of life",
       "mining"
     ],
     "added": "2026-11-23",

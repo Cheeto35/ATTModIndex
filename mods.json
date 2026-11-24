@@ -35,13 +35,18 @@
     ],
     "added": "2026-11-23",
     "latest": {
-      "tag": "v1.0.0",
-      "published": "2026-11-23",
+      "tag": "v1.1.0",
+      "published": "2026-11-24",
       "assets": [
         {
           "name": "CrystalLeather.dll",
-          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.0.0/CrystalLeather.dll",
-          "size": 59392
+          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.1.0/CrystalLeather.dll",
+          "size": 61952
+        },
+        {
+          "name": "CrystalLeather.Quest.dll",
+          "url": "https://github.com/Cheeto35/CheetosCrystalLeather/releases/download/v1.1.0/CrystalLeather.Quest.dll",
+          "size": 41984
         }
       ]
     },

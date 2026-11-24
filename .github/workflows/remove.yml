@@ -1,0 +1,22 @@
+name: Remove mod
+on:
+  issues:
+    types: [opened, edited]
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: index-write
+  cancel-in-progress: false
+jobs:
+  remove:
+    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'removal')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/remove.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

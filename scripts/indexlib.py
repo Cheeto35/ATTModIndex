@@ -6,7 +6,7 @@ import zipfile
 
 SIDES = ("client", "server", "both")
 LABELS = {"repository url": "repo", "mod name": "name", "description": "description", "side": "side",
-          "tags": "tags"}
+          "tags": "tags", "mod": "mod", "why? (optional)": "why"}
 NO_RESPONSE = "_No response_"
 
 BAD_LINK = "That doesn't look like a GitHub repo link."
@@ -15,6 +15,8 @@ NO_RELEASE = "The repo has no releases yet."
 NO_FILES = "The latest release has no .dll or .zip file attached."
 BAD_SIDE = "Pick client, server or both for Side."
 NO_NAME = "Mod name is required."
+NOT_LISTED = "That mod isn't in the list."
+NOT_YOURS = "Only {who} can remove {name}: the person who added it, or the owner of its GitHub repo."
 
 _NAME = r"[A-Za-z0-9_.-]+"
 _REPO_RE = re.compile(r"^(?:(?:https?://)?(?:www\.)?github\.com/)?(" + _NAME + r")/(" + _NAME + r")(?:/.*)?$")
@@ -83,7 +85,7 @@ def _tags(text):
     return out[:5]
 
 
-def validate_submission(fields, existing_ids, release, today=None):
+def validate_submission(fields, existing_ids, release, today=None, submitter=None):
     repo = parse_repo(fields.get("repo", ""))
     if not repo:
         return None, BAD_LINK
@@ -104,7 +106,7 @@ def validate_submission(fields, existing_ids, release, today=None):
     return {"id": mod_id, "name": name[:60], "repo": repo, "author": repo.split("/")[0],
             "description": " ".join((fields.get("description") or "").split())[:200], "side": side,
             "tags": _tags(fields.get("tags")), "added": today or datetime.date.today().isoformat(),
-            "latest": latest}, None
+            "latest": latest, **({"submitted_by": submitter} if submitter else {})}, None
 
 
 def add_entry(mods, entry):
@@ -121,3 +123,48 @@ def refresh_entry(entry, release, repo_exists):
     entry["latest"] = latest
     entry.pop("unavailable", None)
     return entry
+
+
+def owners(entry):
+    """GitHub logins (lower case) allowed to change or remove a listing: who added it, and the repo's owner."""
+    found = {str(entry.get("repo", "")).split("/")[0].lower()}
+    if entry.get("submitted_by"):
+        found.add(str(entry["submitted_by"]).lower())
+    found.discard("")
+    return found
+
+
+def _owner_names(entry):
+    names = [entry.get("submitted_by"), str(entry.get("repo", "")).split("/")[0]]
+    out = []
+    for n in names:
+        if n and n.lower() not in {o.lower() for o in out}:
+            out.append(n)
+    return " or ".join(out)
+
+
+def update_listing(old, new):
+    """An owner's re-submission: new details and release, but keep when and by whom it was first added."""
+    merged = dict(new)
+    for key in ("id", "added", "submitted_by"):
+        if key in old:
+            merged[key] = old[key]
+    merged.pop("unavailable", None)
+    return merged
+
+
+def validate_removal(fields, mods, who):
+    """Returns (entry, None) when `who` may remove the mod named in the form, else (None, reason)."""
+    repo = parse_repo(fields.get("mod", ""))
+    if not repo:
+        return None, BAD_LINK
+    entry = next((m for m in mods if m.get("id") == repo.lower()), None)
+    if entry is None:
+        return None, NOT_LISTED
+    if (who or "").lower() not in owners(entry):
+        return None, NOT_YOURS.format(name=entry.get("name", repo), who=_owner_names(entry))
+    return entry, None
+
+
+def remove_entry(mods, mod_id):
+    return [m for m in mods if m.get("id") != mod_id]

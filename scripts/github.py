@@ -70,3 +70,12 @@ def commit_and_push(message, path="mods.json"):
     run("pull", "--rebase")
     run("push")
     return True
+
+
+def close_issue(repo, number):
+    """Closes an issue; fine if GitHub already closed it."""
+    try:
+        call("PATCH", f"/repos/{repo}/issues/{number}", {"state": "closed", "state_reason": "completed"})
+    except urllib.error.HTTPError as e:
+        if e.code != 422:
+            raise

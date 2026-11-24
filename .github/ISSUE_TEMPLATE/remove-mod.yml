@@ -1,0 +1,19 @@
+name: Remove a mod
+description: Take a mod you added (or whose GitHub repo you own) off the list.
+title: "Remove mod: "
+labels: ["removal"]
+body:
+  - type: markdown
+    attributes:
+      value: Only the person who added a mod, or the owner of its GitHub repo, can remove it. The check uses the GitHub account you're signed in with.
+  - type: input
+    id: mod
+    attributes:
+      label: Mod
+      description: The mod's GitHub link, like https://github.com/You/YourMod
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why? (optional)

@@ -21,6 +21,29 @@
     }
   },
   {
+    "id": "bluesugar3/bluesingamestringtool",
+    "name": "BluesinGameStringTool",
+    "repo": "Bluesugar3/BluesInGameStringTool",
+    "author": "Bluesugar3",
+    "description": "Unrestricted slots for any slot",
+    "side": "both",
+    "tags": [
+      "goonable"
+    ],
+    "added": "2026-11-24",
+    "latest": {
+      "tag": "v0.1.2",
+      "published": "2026-11-24",
+      "assets": [
+        {
+          "name": "BluesInGameStringTool.dll",
+          "url": "https://github.com/Bluesugar3/BluesInGameStringTool/releases/download/v0.1.2/BluesInGameStringTool.dll",
+          "size": 15360
+        }
+      ]
+    }
+  },
+  {
     "id": "cheeto35/cheetoscrystalleather",
     "name": "Crystal Leather",
     "repo": "Cheeto35/CheetosCrystalLeather",

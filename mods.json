@@ -65,5 +65,26 @@
         }
       ]
     }
+  },
+  {
+    "id": "cheeto35/satchel",
+    "name": "Satchel",
+    "repo": "Cheeto35/Satchel",
+    "author": "Cheeto35",
+    "description": "Satchel: a small 2x2 leather bag worn on the hip, for A Township Tale",
+    "side": "both",
+    "tags": [],
+    "added": "2026-11-24",
+    "latest": {
+      "tag": "v1.0.0",
+      "published": "2026-11-24",
+      "assets": [
+        {
+          "name": "Satchel.dll",
+          "url": "https://github.com/Cheeto35/Satchel/releases/download/v1.0.0/Satchel.dll",
+          "size": 125952
+        }
+      ]
+    }
   }
 ]

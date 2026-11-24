@@ -1,5 +1,26 @@
 [
   {
+    "id": "bluesugar3/bluesarcheryoverhaul",
+    "name": "BluesArcheryOverhaul",
+    "repo": "Bluesugar3/BluesArcheryOverhaul",
+    "author": "Bluesugar3",
+    "description": "Default numbers, with the orb's own path as your main path. Times count from the moment the draw passes about two-thirds. 2x means twice your arrow's damage. Orb Effect Quickdraw 1 Snap: 1.25x damage,",
+    "side": "both",
+    "tags": [],
+    "added": "2026-11-24",
+    "latest": {
+      "tag": "v0.19.13",
+      "published": "2026-11-23",
+      "assets": [
+        {
+          "name": "BluesArcheryOverhaul.dll",
+          "url": "https://github.com/Bluesugar3/BluesArcheryOverhaul/releases/download/v0.19.13/BluesArcheryOverhaul.dll",
+          "size": 1761792
+        }
+      ]
+    }
+  },
+  {
     "id": "cheeto35/cheetoscrystalleather",
     "name": "Crystal Leather",
     "repo": "Cheeto35/CheetosCrystalLeather",

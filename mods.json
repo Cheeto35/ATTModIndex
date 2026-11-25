@@ -140,5 +140,30 @@
       ]
     },
     "submitted_by": "Cheeto35"
+  },
+  {
+    "id": "jonathandonkerlot/mappininspector",
+    "name": "MapPinInspector",
+    "repo": "JonathanDonkerlot/MapPinInspector",
+    "author": "JonathanDonkerlot",
+    "description": "A QOL mod that allows for seeing the names of people on the map. I frequently maintain and update it.",
+    "side": "client",
+    "tags": [
+      "qol",
+      "client"
+    ],
+    "added": "2026-11-25",
+    "latest": {
+      "tag": "1.1.2",
+      "published": "2026-11-24",
+      "assets": [
+        {
+          "name": "MapPinInspector.dll",
+          "url": "https://github.com/JonathanDonkerlot/MapPinInspector/releases/download/1.1.2/MapPinInspector.dll",
+          "size": 63488
+        }
+      ]
+    },
+    "submitted_by": "JonathanDonkerlot"
   }
 ]

@@ -11,17 +11,17 @@
     ],
     "added": "2026-11-24",
     "latest": {
-      "tag": "v0.2.1",
-      "published": "2026-11-24",
+      "tag": "v1.0.0",
+      "published": "2026-11-26",
       "assets": [
         {
-          "name": "BluesInGameStringTool.dll",
-          "url": "https://github.com/Bluesugar3/BluesInGameStringTool/releases/download/v0.2.1/BluesInGameStringTool.dll",
-          "size": 18944
+          "name": "BluesUnrestrictedCrafting.dll",
+          "url": "https://github.com/Bluesugar3/BluesUnrestrictedCrafting/releases/download/v1.0.0/BluesUnrestrictedCrafting.dll",
+          "size": 20480
         },
         {
-          "name": "BluesInGameStringTool.Quest.dll",
-          "url": "https://github.com/Bluesugar3/BluesInGameStringTool/releases/download/v0.2.1/BluesInGameStringTool.Quest.dll",
+          "name": "BluesUnrestrictedCrafting.Quest.dll",
+          "url": "https://github.com/Bluesugar3/BluesUnrestrictedCrafting/releases/download/v1.0.0/BluesUnrestrictedCrafting.Quest.dll",
           "size": 12288
         }
       ]

@@ -11,13 +11,18 @@
     ],
     "added": "2026-11-24",
     "latest": {
-      "tag": "v0.1.2",
+      "tag": "v0.2.1",
       "published": "2026-11-24",
       "assets": [
         {
           "name": "BluesInGameStringTool.dll",
-          "url": "https://github.com/Bluesugar3/BluesInGameStringTool/releases/download/v0.1.2/BluesInGameStringTool.dll",
-          "size": 15360
+          "url": "https://github.com/Bluesugar3/BluesInGameStringTool/releases/download/v0.2.1/BluesInGameStringTool.dll",
+          "size": 18944
+        },
+        {
+          "name": "BluesInGameStringTool.Quest.dll",
+          "url": "https://github.com/Bluesugar3/BluesInGameStringTool/releases/download/v0.2.1/BluesInGameStringTool.Quest.dll",
+          "size": 12288
         }
       ]
     },
